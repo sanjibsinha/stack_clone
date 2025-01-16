@@ -5,11 +5,16 @@
 While your current styles.css provides a basic layout, we can improve it for a more polished look:
 
 Responsiveness: Consider using media queries to adjust styles for different screen sizes. Bootstrap offers responsive classes readily available.
+
 Typography: Explore different font families and sizes for headings and body text. Bootstrap provides pre-defined classes for typography.
+
 Spacing and Layout: Utilize margins, padding, and white space to create a cleaner layout with better readability. Bootstrap offers utility classes for spacing.
+
 Colors: Define a consistent color palette for your website and use those colors in your CSS.
+
 Here's an example of a revised styles.css incorporating some suggestions:
-2. Using django-bootstrap5 (Recommended for Django Projects):
+
+### 2. Using django-bootstrap5 (Recommended for Django Projects):
 
 The django-bootstrap5 package provides template tags and filters that make it very easy to integrate Bootstrap into your Django templates. This is the preferred method for Django projects.
 
