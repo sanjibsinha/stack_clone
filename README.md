@@ -57,11 +57,12 @@ django-bootstrap5 handles including the correct CSS and JS files for you, includ
 {% static 'css/styles.css' %}: This is a Django template tag that generates the correct URL for your static files.
 
 static: This refers to your static files directory, which is where you store things like CSS, JavaScript, images, and other assets that are served directly to the browser.
+
 css/styles.css: This specifies the path to your CSS file relative to your static files directory.
 How to set up your static files:
 
 Create the static directory structure: Inside your app directory (in your case, main), create a directory named static. Inside static, create another directory named css. Finally, inside css, create the styles.css file. The final structure should look like this:
-
+```bash
 main/
 ├── static/
 │   └── css/
@@ -69,6 +70,7 @@ main/
 ├── templates/
 │   └── ...
 ├── ...
+```
 Configure settings.py: In your project's settings.py file, make sure you have the following settings:
 
 Python
@@ -79,7 +81,9 @@ STATICFILES_DIRS = [
 ]
 ```
 STATIC_URL: This defines the URL that will be used to access your static files in your templates (e.g., /static/css/styles.css).
+
 STATICFILES_DIRS: This is a list of directories where Django will look for static files. By adding BASE_DIR / 'main/static', you tell Django to look in the static directory within your main app.
+
 Collect static files (for production): When you deploy your Django project to a production server, you need to collect all the static files into a single directory that your web server can serve. You do this using the following command:
 
 ```bash
@@ -87,13 +91,21 @@ python manage.py collectstatic
 ```
 
 Modern Font: Uses Roboto (you'll need to include this font via Google Fonts or a similar service if you want to use it). You can replace it with another web-safe font if you prefer.
+
 Clearer Typography: Improved heading styles and line height for better readability.
+
 Color Palette: Uses a consistent color scheme based on Bootstrap's primary blue and neutral grays.
+
 Spacing and Layout: Better use of margins and padding to create a more balanced layout.
+
 Button Styles: Created a reusable .btn-primary class for buttons.
+
 Container: Added a .container class to center content and control width.
+
 Responsiveness: Added media queries to make the layout adapt to smaller screens.
+
 Transitions: Added smooth transitions for hover effects.
+
 How to use Roboto font:
 
 The easiest way is to include it from Google Fonts. Add the following line within the <head> of your base.html file:
@@ -107,10 +119,17 @@ This will load the regular (400), medium (500), and bold (700) weights of the Ro
 Now that you have a good base structure and styling, here are some next steps you might consider as you continue building your Substack clone:
 
 Models: Define your Django models to represent your data (e.g., Post, Author, Subscriber).
+
 Views and URLs: Create Django views to handle different functionalities (e.g., displaying posts, user authentication, subscription management) and configure the corresponding URLs.
+
 Database Migrations: Use python manage.py makemigrations and python manage.py migrate to create and apply database migrations based on your models.
+
 User Authentication: Implement user registration, login, and logout functionality. Django provides built-in tools for this, which can be customized.
+
 Post Creation and Management: Create forms and views for authors to create, edit, and publish posts.
+
 Subscription Logic: Implement the logic for users to subscribe to authors and receive updates.
+
 Frontend Interactivity: Use JavaScript (or a framework like Vue.js or React if you want more complex interactions) to add dynamic behavior to your website (e.g., handling form submissions, displaying notifications).
+
 Testing: Write unit tests and integration tests to ensure your code works correctly.
