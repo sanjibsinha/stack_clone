@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Home - Substack Clone{% endblock %} {# Specific title for this page #}
+
+{% block content %}
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Our Substack Clone</h1>
+            <p>Discover insightful articles, stories, and perspectives from a community of writers.</p>
+            <a href="/subscribe/" class="btn btn-primary">Subscribe Now</a>
+        </div>
+    </section>
+
+    <section class="featured-posts">
+        <div class="container">
+            <h2>Featured Posts</h2>
+            <div class="row"> {# Bootstrap grid system for layout #}
+                <div class="col-md-4"> {# Each post takes up 1/3 of the row on medium screens and up #}
+                    <div class="card mb-4"> {# Bootstrap card component #}
+                        <div class="card-body">
+                            <h5 class="card-title">Post Title 1</h5>
+                            <p class="card-text">Short description of the post.</p>
+                            <a href="#" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Post Title 2</h5>
+                            <p class="card-text">Another short description.</p>
+                            <a href="#" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Post Title 3</h5>
+                            <p class="card-text">Description of the third post.</p>
+                            <a href="#" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action bg-light py-5">
+      <div class="container text-center">
+        <h2>Ready to Start Writing?</h2>
+        <p>Join our community and share your voice with the world.</p>
+        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+      </div>
+    </section>
+
+{% endblock %}
