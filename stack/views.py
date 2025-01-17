@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Post, Author, Subscriber
+from stack.models import Post, Author, Subscriber
 from django.http import HttpResponseForbidden
 
 def index(request):
