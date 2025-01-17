@@ -13,35 +13,23 @@
     <section class="featured-posts">
         <div class="container">
             <h2>Featured Posts</h2>
-            <div class="row"> {# Bootstrap grid system for layout #}
-                <div class="col-md-4"> {# Each post takes up 1/3 of the row on medium screens and up #}
-                    <div class="card mb-4"> {# Bootstrap card component #}
-                        <div class="card-body">
-                            <h5 class="card-title">Post Title 1</h5>
-                            <p class="card-text">Short description of the post.</p>
-                            <a href="#" class="btn btn-secondary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Post Title 2</h5>
-                            <p class="card-text">Another short description.</p>
-                            <a href="#" class="btn btn-secondary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Post Title 3</h5>
-                            <p class="card-text">Description of the third post.</p>
-                            <a href="#" class="btn btn-secondary">Read More</a>
-                        </div>
+            <h1>Recent Posts</h1>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    {% if post.cover_image %}
+                    <img src="{{ post.cover_image.url }}" class="card-img-top" alt="{{ post.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
+        {% endfor %}
+    </div>
         </div>
     </section>
 
